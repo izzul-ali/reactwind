@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useChangeTitle } from "../hooks/changeTitle"
 
 const NotFound = () => {
+    useChangeTitle('404 | Belajar Routing')
+
     return (
         <div className="w-full h-screen flex items-center justify-center">
             <div className="text-center space-y-3">

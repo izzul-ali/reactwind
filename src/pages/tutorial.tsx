@@ -1,4 +1,8 @@
+import { useChangeTitle } from "../hooks/changeTitle"
+
 const Tutorial = () => {
+  useChangeTitle('Tutorial | Belajar Routing')
+
   return (
     <>
       <h1 className="text-3xl font-bold">Tutorial</h1>

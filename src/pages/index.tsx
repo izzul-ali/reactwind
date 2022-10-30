@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useChangeTitle } from "../hooks/changeTitle"
 
 const Home = () => {
+    useChangeTitle('Home | Belajar Routing')
+
     return (
         <>
             <h1 className="text-3xl font-bold">Feature Overview</h1>
@@ -26,7 +29,7 @@ const Home = () => {
                     <li>The layouts to render on the page</li>
                     <li>The data dependencies of those layouts</li>
                 </ul>
-                
+
                 <p>React Router embraces this convention with APIs for creating nested layouts coupled to URL segments and data.</p>
                 <p>React Router embraces this convention with APIs for creating nested layouts coupled to URL segments and data.</p>
                 <p>React Router embraces this convention with APIs for creating nested layouts coupled to URL segments and data.</p>

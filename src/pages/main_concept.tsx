@@ -1,4 +1,8 @@
+import { useChangeTitle } from "../hooks/changeTitle"
+
 const MainConcept = () => {
+  useChangeTitle('Main Concept | Belajar Routing')
+
   return (
     <>
       <h1 className="text-3xl font-bold">Main Concept</h1>
