@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FallbackSuspense from "./components/FallbackSuspense";
+import Home from "./pages";
 
+// const Home = lazy(() => import('./pages/index'))
 const LayoutDefault = lazy(() => import('./components/layouts/LayoutDefault'))
-const Home = lazy(() => import('./pages/index'))
 const Tutorial = lazy(() => import('./pages/tutorial'))
 const Example = lazy(() => import('./pages/example'))
 const FAQs = lazy(() => import('./pages/faqs'))
