@@ -36,32 +36,31 @@ export default App
 
 
 // const route = createBrowserRouter([
-//   // {
-//   //   path: '/',
-//   //   element: <LayoutDefault />,
-//   //   children: [
-
-//   //   ]
-//   // },
 //   {
 //     path: '/',
-//     element: <Home />
-//   },
-//   {
-//     path: '/tutorial',
-//     element: <Tutorial />
-//   },
-//   {
-//     path: '/example',
-//     element: <Example />
-//   },
-//   {
-//     path: '/faqs',
-//     element: <FAQs />
-//   },
-//   {
-//     path: '/main_concept',
-//     element: <MainConcept />
+//     element: <LayoutDefault/>,
+//     children: [
+//       {
+//         path: '/',
+//         element: <Home />
+//       },
+//       {
+//         path: '/tutorial',
+//         element: <Tutorial />
+//       },
+//       {
+//         path: '/example',
+//         element: <Example />
+//       },
+//       {
+//         path: '/faqs',
+//         element: <FAQs />
+//       },
+//       {
+//         path: '/main_concept',
+//         element: <MainConcept />
+//       },
+//     ]
 //   },
 //   {
 //     path: '*',
