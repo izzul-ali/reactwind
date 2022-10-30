@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react"
-import { Outlet } from "react-router"
+import { ReactNode, useEffect, useState } from "react"
 import Dark from "../icons/Dark"
 import Light from '../icons/Light'
 import NavbarLayout from "../NavbarLayout"
 
-const LayoutDefault = () => {
+type Props = {
+    children: ReactNode
+}
+
+const LayoutDefault = ({ children }: Props) => {
     const [isDark, setTheme] = useState(false)
 
     useEffect(() => {
@@ -44,7 +47,7 @@ const LayoutDefault = () => {
                 <NavbarLayout />
 
                 <div className="px-3 pb-36 mt-8 lg:h-screen lg:flex-1 lg:overflow-y-scroll">
-                    <Outlet />
+                    {children}
                 </div>
             </div>
         </div>
