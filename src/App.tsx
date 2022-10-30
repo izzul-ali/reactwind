@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FallbackSuspense from "./components/FallbackSuspense";
-import LayoutDefault from "./components/layouts/LayoutDefault";
 
+const LayoutDefault = lazy(() => import('./components/layouts/LayoutDefault'))
 const Home = lazy(() => import('./pages/index'))
 const Tutorial = lazy(() => import('./pages/tutorial'))
 const Example = lazy(() => import('./pages/example'))
@@ -15,24 +15,25 @@ const NotFound = lazy(() => import('./pages/notFound'))
 const App = () => {
   return (
     <BrowserRouter>
-      <LayoutDefault>
-        <Suspense fallback={<FallbackSuspense />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/tutorial" element={<Tutorial />} />
-            <Route path="/example" element={<Example />} />
-            <Route path="/faqs" element={<FAQs />} />
-            <Route path="/main_concept" element={<MainConcept />} />
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </LayoutDefault>
+      <Suspense fallback={<FallbackSuspense />}> {/* First load */}
+        <LayoutDefault>
+          <Suspense fallback={<FallbackSuspense />}> {/* loading inside the layout */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/tutorial" element={<Tutorial />} />
+              <Route path="/example" element={<Example />} />
+              <Route path="/faqs" element={<FAQs />} />
+              <Route path="/main_concept" element={<MainConcept />} />
+              <Route path="/*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </LayoutDefault>
+      </Suspense>
     </BrowserRouter>
   )
 }
 
 export default App
-
 
 
 // const route = createBrowserRouter([
