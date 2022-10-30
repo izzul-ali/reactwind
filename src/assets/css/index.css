@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1, h2, h3, h4 {
+    @apply dark:text-gray-200
+}
+
+p {
+    @apply dark:text-gray-300
+}
